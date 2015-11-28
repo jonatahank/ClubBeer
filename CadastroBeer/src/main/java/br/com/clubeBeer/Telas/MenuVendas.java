@@ -127,7 +127,7 @@ public class MenuVendas extends JFrame implements ActionListener, KeyListener {
 		label[2] = new JLabel("Valor:");
 		label[2].setBounds(10, 90, 100, 20);
 
-		label[3] = new JLabel("Descris„o :");
+		label[3] = new JLabel("Descris√£o :");
 		label[3].setBounds(10, 140, 100, 20);
 		
 		
@@ -380,6 +380,8 @@ public class MenuVendas extends JFrame implements ActionListener, KeyListener {
 					PDF pdf = new PDF(cliente, pdfFuncionario,tabelaProdutos,nome,valor);
 					
 					Menu menu = new Menu();
+					ListaProduto produto = new ListaProduto();
+					produto.janela.setVisible(false);
 					setVisible(false);
 					menu.Montar();
 					

@@ -25,10 +25,10 @@ public class AlterarRegistroJuridico extends JFrame implements ActionListener {
   
     String [] ufEscolha = {"","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"};
     JComboBox uf         = new JComboBox (ufEscolha);		
-    JTextArea observacao = new JTextArea("Observação");
+    JTextArea observacao = new JTextArea("ObservaÃ§ao");
     
     JButton atualiza             = new JButton("Atualizar");
-    JButton excluir             = new JButton("Excluir");//Botão para salvar
+    JButton excluir             = new JButton("Excluir");//Botï¿½o para salvar
     // Criando os JTextField
 	JTextField dataCadastro   = new JTextField();
 	JTextField nome           = new JTextField();	   
@@ -49,8 +49,8 @@ public class AlterarRegistroJuridico extends JFrame implements ActionListener {
 	JLabel telefone1jl        = new JLabel("TELEFONE :");
 	JLabel telefone2jl        = new JLabel("CELULAR :");
 	JLabel cepjl              = new JLabel("CEP :");
-	JLabel enderecojl         = new JLabel("ENDEREÇO :");
-	JLabel numerojl           = new JLabel("Nº :");
+	JLabel enderecojl         = new JLabel("ENDEREÃ‡O :");
+	JLabel numerojl           = new JLabel("NÂº :");
 	JLabel complementojl      = new JLabel("COMPLEMENTO :");
 	JLabel bairrojl           = new JLabel("BAIRRO :");
 	JLabel cidadejl           = new JLabel("CIDADE :");
@@ -202,9 +202,10 @@ public class AlterarRegistroJuridico extends JFrame implements ActionListener {
 		pessoa.setId((Integer.parseInt(id.getText())));
 		
 		add.Alterar(pessoa);
-		br.com.clubeBeer.Telas.Menu.main(null);
+		
 		JOptionPane.showMessageDialog(null, "Cadastro atualizado com sucesso " );
-		Menu.main(null);
+		
+		Menu.Montar();
 
 		
 		setVisible(false);
@@ -214,7 +215,8 @@ public class AlterarRegistroJuridico extends JFrame implements ActionListener {
 			PessoaJuridicaDAO excluir = new PessoaJuridicaDAO();
 			excluir.Excliur(nome.getText());
 			JOptionPane.showMessageDialog(null, "Cadastro excluido com sucesso " );
-			Menu.main(null);
+			setVisible(false);
+			Menu.Montar();
 		}
 		
 	}

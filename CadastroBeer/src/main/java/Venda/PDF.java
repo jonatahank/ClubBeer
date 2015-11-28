@@ -25,7 +25,7 @@ public class PDF {
 
 		Document pdf = new Document();
 		Font f = new Font(FontFamily.TIMES_ROMAN, 20, Font.BOLD);
-		Font p = new Font();
+		Font p = new Font(FontFamily.TIMES_ROMAN, 12, Font.NORMAL);
 		try {
 			/**
 			 * Criando a instancia para referenciar onde o pdf vai ser craido
@@ -36,50 +36,50 @@ public class PDF {
 
 			pdf.open();// abrindo
 			pdf.setPageSize(PageSize.A4);// tamanho dp pdf
+			pdf.setMargins(10, 10, 10, 10);
 			// imagem
 			Image img = Image
-					.getInstance("C:\\Users\\Andriotti\\Desktop\\Algoritmo\\logo_serv1.png");
+					.getInstance("C:\\Users\\Andriotti\\Desktop\\Algoritmo\\nota.png");
 
 			// set tamanho da imagem
 
-			img.scaleToFit(100, 100);
+			img.scaleToFit(550, 190);
 
 			img.setAlignment(Image.ALIGN_LEFT);
 			pdf.add(img);
 			 
 			
 			// criando paragrafo
-			Paragraph p1 = new Paragraph("Relatório de Vendas", f);
+			Paragraph p1 = new Paragraph("RelatÃ³rio de Vendas", f);
 			// Setando o alinhamento p/ o centro
 	        p1.setAlignment(Paragraph.ALIGN_CENTER);
-	        
-	        
+
 	        // Definindo
-	        p1.setSpacingAfter(50);
+	        p1.setSpacingAfter(20);
 	        pdf.add(p1);
 	        
-	        Paragraph p2 = new Paragraph("Club Beer", f);
-			// Setando o alinhamento p/ o centro
-	        p2.setAlignment(Paragraph.ALIGN_CENTER);
-	 
-	        // Definindo
-	        p2.setSpacingAfter(50);
-	        pdf.add(p2);
+//	        Paragraph p2 = new Paragraph("Club Beer", f);
+//			// Setando o alinhamento p/ o centro
+//	        p2.setAlignment(Paragraph.ALIGN_CENTER);
+//	 
+//	        // Definindo
+//	        p2.setSpacingAfter(50);
+//	        pdf.add(p2);
 	        
 	        Paragraph separar = new Paragraph("____________________________________________________", f);
 			// Setando o alinhamento p/ o centro
 	        separar.setAlignment(Paragraph.ALIGN_CENTER);
 	 
 	        // Definindo
-	        separar.setSpacingAfter(50);
+	        separar.setSpacingAfter(20);
 	        pdf.add(separar);
 	        
-	        Paragraph p3 = new Paragraph("Cliente : " + paragrafo1, f);
+	        Paragraph p3 = new Paragraph("Cliente : " + paragrafo1, p);
 			// Setando o alinhamento p/ o centro
 	        p3.setAlignment(Paragraph.ALIGN_LEFT);
 	 
 	        // Definindo
-	        p3.setSpacingAfter(50);
+	        p3.setSpacingAfter(20);
 	        pdf.add(p3);
 	        
 	        Paragraph separar1 = new Paragraph("____________________________________________________", f);
@@ -87,10 +87,10 @@ public class PDF {
 	        separar1.setAlignment(Paragraph.ALIGN_CENTER);
 	 
 	        // Definindo
-	        separar1.setSpacingAfter(50);
+	        separar1.setSpacingAfter(20);
 	        pdf.add(separar1);
 	        
-	        Paragraph p4 = new Paragraph("Vendedor : " + paragrafo2, f);
+	        Paragraph p4 = new Paragraph("Vendedor : " + paragrafo2, p);
 			// Setando o alinhamento p/ o centro
 	        p4.setAlignment(Paragraph.ALIGN_LEFT);
 	 
@@ -103,21 +103,27 @@ public class PDF {
 	        separar2.setAlignment(Paragraph.ALIGN_CENTER);
 	 
 	        // Definindo
-	        separar2.setSpacingAfter(50);
+	        separar2.setSpacingAfter(20);
 	        pdf.add(separar2);
 	        
 	        boolean parar = true;
 	        int i=0;
 	        
+	        Paragraph produtos = new Paragraph("Produtos",f);
+	        produtos.setAlignment(Paragraph.ALIGN_LEFT);
+	        produtos.setSpacingAfter(50);
+	       pdf.add(produtos);
+	        
 	 while(parar){
 		
 	       if(produto[i][0] != null){
-	    	   Paragraph p6 = new Paragraph("Produto : " + produto[i][0], f);
+	    	   
+	    	   Paragraph p6 = new Paragraph(produto[i][0] + "  ", p);
 				// Setando o alinhamento p/ o centro
 		        p6.setAlignment(Paragraph.ALIGN_LEFT);
-		 
+        
 		        // Definindo
-		        p6.setSpacingAfter(50);
+		       p6.setSpacingAfter(10);
 		        pdf.add(p6);   
 	       }else{
 	    	   parar = false;
@@ -129,12 +135,12 @@ public class PDF {
 	 String palavra = "Java";  
 	   
 	 letras = palavra.toCharArray();  
-	 // feito isso em letras vc terá:  
+	 // feito isso em letras vc terï¿½:  
 	 // letras[0] = 'J';  
 	 // letras[1] = 'a';  
 	 // letras[2] = 'v';  
 	 // letras[3] = 'a';  
-	 System.out.println("quantidade de letras: " + letras.length);
+	// System.out.println("quantidade de letras: " + letras.length);
 	 
 
 	 String v = NumberFormat.getCurrencyInstance().format(valor);
@@ -157,18 +163,7 @@ public class PDF {
 		code.setAlignment(Image.ALIGN_LEFT);
 		pdf.add(code);
 	        
-//	        // Criando uma tabela com 3 colunas
-//	        PdfPTable table = new PdfPTable(1);
-//	        // Título para a tabela
-//	        Paragraph tableHeader = new Paragraph("Produtos");
-//	 
-//	        PdfPCell header = new PdfPCell(tableHeader);
-//	        // Definindo que o header vai ocupar as 3 colunas
-//	        header.setColspan(1);
-//	        // Definindo alinhamento do header
-//	        header.setHorizontalAlignment(Paragraph.ALIGN_CENTER);
-//	        // Adicionando o header à tabela
-//	        table.addCell(header);
+
 //	 
 //	        List<String> list = new ArrayList<String>();
 //	 
@@ -193,7 +188,7 @@ public class PDF {
 			// paragra 1
 
 			pdf.newPage();// nova pagina // nova pagina
-			// pdf.add(new Paragraph("2º paragrafo"));// 2 paragrafo
+			// pdf.add(new Paragraph("2ï¿½ paragrafo"));// 2 paragrafo
 
 			// add img ao pdf
 

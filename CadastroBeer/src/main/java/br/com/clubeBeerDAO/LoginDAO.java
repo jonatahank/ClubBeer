@@ -45,41 +45,69 @@ public String senha;
 			e.printStackTrace();
 		}
 	}
-	public  static void Listar(Login login){
-		List<Login>contatos = new ArrayList<Login>();
-		try{
-			
-			String sql = "select user,senha from login";
+	
+	public void Listar(Login login){  
+		
+		boolean usuario = false;
+		boolean senhaU = false;
+		
+	    try {
+	    	
+	    	String sql = "select user,senha from login ";
 			PreparedStatement stmt = con.prepareStatement(sql);
+			
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next()){
-				
-				Login cadastro = new Login();
-				
-				cadastro.setUsuario(rs.getString("user"));
-				cadastro.setSenha(rs.getString("senha"));
-				contatos.add(cadastro);
-				//rs.first();// não sei que faz não em 
-				if(login.getUsuario().equals(cadastro.getUsuario()) && login.getSenha().equals(cadastro.getSenha())){
-					Menu.Montar();
-				}else if(login.getUsuario()!= cadastro.getUsuario() && login.getSenha().equals(cadastro.getSenha())) {
-					JOptionPane.showMessageDialog(null, "Usuario Incorreto " );
-				}else if(login.getUsuario().equals(cadastro.getUsuario()) && login.getSenha()!= cadastro.getSenha()) {
-					JOptionPane.showMessageDialog(null, "Senha Incorreto " );
-				}else if(login.getUsuario()!= cadastro.getUsuario() && login.getSenha()!= cadastro.getSenha()) {
-					JOptionPane.showMessageDialog(null, "Usuario e Senha Incorreto " );
-				}
+				String user = rs.getString("user");
+				String senha = rs.getString("senha");
 
-				
-				
-			
-			}
-			System.out.println(contatos.toString());
-			
-         }catch (SQLException e){
-			throw new RuntimeException(e);
+					if(user.equals(login.getUsuario()) && senha.equals(login.getSenha())){
+						usuario = true;
+						senhaU  = true;
+					}
+					
+				}
+				if(usuario == true && senhaU == true){
+					Menu.Montar();
+				}else{
+					TelaLogin inicio = new TelaLogin();
+					inicio.setVisible(true);
+					JOptionPane.showMessageDialog(null, "Usuario ou senha incorreto");
+				}
+					
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
-	}
+	} 
+//	public  static void Listar(Login login){
+//		List<Login>contatos = new ArrayList<Login>();
+//		try{
+//			
+//			String sql = "select user,senha from login where user = ? and senha = ?";
+//			PreparedStatement stmt = con.prepareStatement(sql);
+//			
+//			
+//			Login cadastro = new Login();
+//			stmt.setString(1,cadastro.getUsuario());
+//			stmt.setString(2,cadastro.getSenha());
+//			
+//			ResultSet rs = stmt.executeQuery();
+//		
+//				
+//				String a = (rs.getString("user"));
+//				String b = (rs.getString("senha"));
+//				contatos.add(cadastro);
+//				System.out.println(a + b);
+//			
+//			
+//			
+//         }catch (SQLException e){
+//			throw new RuntimeException(e);
+//		}
+//		
+//	}
 }

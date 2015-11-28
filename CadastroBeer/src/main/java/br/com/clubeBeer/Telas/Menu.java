@@ -45,7 +45,7 @@ public class Menu{
 
 	public static void main(String[] args) {
 		try {
-			javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
+			javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
 			} catch (Exception ex) {
 			ex.printStackTrace();
 			}
@@ -74,17 +74,17 @@ public class Menu{
 	public static void MenuItem() {
 		menuCadastro = new JMenu("Cadastrar");// menu de cadastro de pessoas
 		menuProdutos = new JMenu("Loja");// menu de cadastro de vendas e produtos
-		sair = new JMenuItem("Sair");// menu sair 
+		menuSair = new JMenu("Sair");// menu sair 
 		tipoCliente = new JMenu("Clientes");// sub menu do menu cadastro para tipos de pessoas ( fisica/juridica)
 		/* menus de tipos de pessoas*/
 		fisico = new JMenu("Pessoa Fisica");
 		juridico = new JMenu("Pessoa Juridico");
-		menuFuncionario = new JMenu("Funcionários");
+		menuFuncionario = new JMenu("Funcionarios");
 	
 		// COLANDO NA PAREDE
 		menuBar.add(menuCadastro);
 		menuBar.add(menuProdutos);
-		menuBar.add(sair);
+		menuBar.add(menuSair);
 		
 		menuCadastro.add(tipoCliente);
 		menuCadastro.add(menuFuncionario);
@@ -102,7 +102,7 @@ public class Menu{
 		/*  sub item do menu pessoa juridica para cadastrar e consultar*/
 		juridicoItem = new JMenuItem("Salva cliente juridico");
 		juridicoConsulta = new JMenuItem("Consulta pessoa juridico");
-		
+		sair = new JMenuItem("Sair da aplicaÃ§Ã£o");
 		
 		
 		funcionarioCadastrar = new JMenuItem("Cadastro de Funcionarios");
@@ -117,13 +117,13 @@ public class Menu{
 		
 		menuFuncionario.add(funcionarioCadastrar);
 		menuFuncionario.add(funcionarioConsultar);
-		
+		menuSair.add(sair);
 		menuProdutos.add(club);
 
 	}
 
 	private static void preparaBotaoCarregar()  {
-		/* Botões para tela pessoa fisica*/
+		/* Botï¿½es para tela pessoa fisica*/
 
 		fisicoItem.addActionListener(new ActionListener() {
 			@Override
@@ -146,7 +146,7 @@ public class Menu{
 		
 	}
 	private static void preparaBotaoCarregarJ()  {
-		/* Botões para tela pessoa juridica*/
+		/* Botï¿½es para tela pessoa juridica*/
 
 		juridicoItem.addActionListener(new ActionListener() {
 			@Override
@@ -169,7 +169,7 @@ public class Menu{
 
 	}
 	private static void preparaBotaoCarregarF()  {
-		/* Botões para tela pessoa juridica*/
+		/* Botï¿½es para tela pessoa juridica*/
 
 		funcionarioCadastrar.addActionListener(new ActionListener() {
 			@Override
@@ -195,13 +195,13 @@ public class Menu{
 	}
 	
 	private static void preparaBotaoCarregarCompras()  {
-		/* Botões para tela pessoa juridica*/
+		/* Botï¿½es para tela pessoa juridica*/
 
 		sair.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == sair){
-					JOptionPane.showMessageDialog(null, "Deseja sair da aplicação");
+					JOptionPane.showMessageDialog(null, "Deseja sair da aplicaÃ§Ã£o");
 				 System.exit(0);
 			}}
 		});

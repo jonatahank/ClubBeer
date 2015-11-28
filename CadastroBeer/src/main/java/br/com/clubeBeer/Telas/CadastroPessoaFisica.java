@@ -29,13 +29,13 @@ import PessoaFisica.PessoaFisica;
 
 public class CadastroPessoaFisica extends JFrame implements ActionListener{
 	Container fixo;
-    String [] sexo            = {"","Masculino","Feminino","Não informado"};//Array para colocar no combo box para escolha do sexo;
+    String [] sexo            = {"","Masculino","Feminino","nÃ£o informado"};//Array para colocar no combo box para escolha do sexo;
     JComboBox escolhaSexo         = new JComboBox (sexo);
     String [] ufEscolha = {"","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"};
     JComboBox uf         = new JComboBox (ufEscolha);		
-    JTextArea observacao = new JTextArea("Observação");
+    JTextArea observacao = new JTextArea("ObservaÃ§Ã£o");
     
-    JButton salva             = new JButton("SALVAR");//Botão para salvar
+    JButton salva             = new JButton("SALVAR");//Botï¿½o para salvar
     // Criando os JTextField
 	JTextField dataCadastro   = new JTextField();
 	JTextField nome           = new JTextField();	   
@@ -56,8 +56,8 @@ public class CadastroPessoaFisica extends JFrame implements ActionListener{
 	JLabel telefone1jl        = new JLabel("TELEFONE :");
 	JLabel telefone2jl        = new JLabel("CELULAR :");
 	JLabel cepjl              = new JLabel("CEP :");
-	JLabel enderecojl         = new JLabel("ENDEREÇO :");
-	JLabel numerojl           = new JLabel("Nº :");
+	JLabel enderecojl         = new JLabel("ENDEREï¿½O :");
+	JLabel numerojl           = new JLabel("NÂº :");
 	JLabel complementojl      = new JLabel("COMPLEMENTO :");
 	JLabel bairrojl           = new JLabel("BAIRRO :");
 	JLabel cidadejl           = new JLabel("CIDADE :");

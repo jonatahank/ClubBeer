@@ -20,9 +20,9 @@ import br.com.clubeBeerDAO.PessoaFisicaDAO;
 
 public class CadastroFuncionario extends JFrame implements ActionListener {
 	Container fixo;
-	String[] sexo = { "", "Masculino", "Feminino", "N„o informado" };
-	String[] funcao = { "", "Vendedor", "Administrativo", "Diretoria","Entregador", "N„o informado" };
-	String[] estadoCivil = { "", "Solteiro", "Casado", "Viuvo", "N„o Informado" };
+	String[] sexo = { "", "Masculino", "Feminino", "n√£o informado" };
+	String[] funcao = { "", "Vendedor", "Administrativo", "Diretoria","Entregador", "n√£o informado" };
+	String[] estadoCivil = { "", "Solteiro", "Casado", "Viuvo", "n√£o informado" };
 	String[] ufEscolha = { "", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
 			"MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS",
 			"RO", "RR", "SC", "SP", "SE", "TO" };
@@ -32,9 +32,9 @@ public class CadastroFuncionario extends JFrame implements ActionListener {
 	JComboBox estadoCivilCombo = new JComboBox(estadoCivil);
 	JComboBox uf = new JComboBox(ufEscolha);
 	
-	JTextArea observacao = new JTextArea("ObservaÁ„o");
+	JTextArea observacao = new JTextArea("Observa√ß√£o");
 
-	JButton salva = new JButton("SALVAR");// Bot„o para salvar
+	JButton salva = new JButton("SALVAR");// BotÔøΩo para salvar
 	// Criando os JTextField
 	JTextField dataCadastro = new JTextField();
 	JTextField nome = new JTextField();
@@ -51,16 +51,16 @@ public class CadastroFuncionario extends JFrame implements ActionListener {
 	JTextField cpf = new JTextField();
 	JTextField salario = new JTextField();
 	// Criando psJLabel
-	JLabel salariojl = new JLabel("SAL¡RIO :");
-	JLabel funcaojl = new JLabel("FUN«‘ES :");
+	JLabel salariojl = new JLabel("SAL√ÅRIO :");
+	JLabel funcaojl = new JLabel("FUN√á√ïES :");
 	JLabel estadoCiviljl = new JLabel("ESTADO CIVIL :");
 	JLabel escolhaSexojl = new JLabel("SEXO :");
 	JLabel nomeJl = new JLabel("NOME :");
 	JLabel telefone1jl = new JLabel("TELEFONE :");
 	JLabel telefone2jl = new JLabel("CELULAR :");
 	JLabel cepjl = new JLabel("CEP :");
-	JLabel enderecojl = new JLabel("ENDERE«O :");
-	JLabel numerojl = new JLabel("N∫ :");
+	JLabel enderecojl = new JLabel("ENDEREÔøΩO :");
+	JLabel numerojl = new JLabel("N¬∫:");
 	JLabel complementojl = new JLabel("COMPLEMENTO :");
 	JLabel bairrojl = new JLabel("BAIRRO :");
 	JLabel cidadejl = new JLabel("CIDADE :");

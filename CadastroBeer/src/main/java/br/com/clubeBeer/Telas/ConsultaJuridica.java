@@ -53,6 +53,7 @@ public class ConsultaJuridica {
 		tabela.addMouseListener(new MouseAdapter() {  
 	            public void mouseClicked(MouseEvent e) {  
 	                if(e.getClickCount() == 2) {  
+	                	janela.setVisible(false);
 	                    int row = tabela.getSelectedRow();  
 	                    PessoaJuridica pessoa = new PessoaJuridica();
 	                    AlterarRegistroJuridico teste = new AlterarRegistroJuridico();

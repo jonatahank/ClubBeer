@@ -23,11 +23,11 @@ import PessoaFisica.PessoaFisica;
 public class AlterarRegistroFuncionario extends JFrame implements ActionListener {
 	
 	  JButton atualiza             = new JButton("Atualizar");
-	    JButton excluir             = new JButton("Excluir");//Bot„o para salvar
+	    JButton excluir             = new JButton("Excluir");//BotÔøΩo para salvar
 	Container fixo;
-	String[] sexo = { "", "Masculino", "Feminino", "N„o informado" };
-	String[] funcao = { "", "Vendedor", "Administrativo", "Diretoria","Entregador", "N„o informado" };
-	String[] estadoCivil = { "", "Solteiro", "Casado", "Viuvo", "N„o Informado" };
+	String[] sexo = { "", "Masculino", "Feminino", "n√£o informado" };
+	String[] funcao = { "", "Vendedor", "Administrativo", "Diretoria","Entregador", "n√£o informado" };
+	String[] estadoCivil = { "", "Solteiro", "Casado", "Viuvo", "n√£o informado" };
 	String[] ufEscolha = { "", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
 			"MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS",
 			"RO", "RR", "SC", "SP", "SE", "TO" };
@@ -37,9 +37,9 @@ public class AlterarRegistroFuncionario extends JFrame implements ActionListener
 	JComboBox estadoCivilCombo = new JComboBox(estadoCivil);
 	JComboBox uf = new JComboBox(ufEscolha);
 	
-	JTextArea observacao = new JTextArea("ObservaÁ„o");
+	JTextArea observacao = new JTextArea("Observa√ß√£o");
 
-	JButton salva = new JButton("SALVAR");// Bot„o para salvar
+	JButton salva = new JButton("SALVAR");// BotÔøΩo para salvar
 	// Criando os JTextField
 	JTextField dataCadastro = new JTextField();
 	JTextField nome = new JTextField();
@@ -57,16 +57,16 @@ public class AlterarRegistroFuncionario extends JFrame implements ActionListener
 	JTextField salario = new JTextField();
 	JTextField id             = new JTextField();
 	// Criando psJLabel
-	JLabel salariojl = new JLabel("SAL¡RIO :");
-	JLabel funcaojl = new JLabel("FUN«‘ES :");
+	JLabel salariojl = new JLabel("SAL√ÅRIO :");
+	JLabel funcaojl = new JLabel("FUN√á√îES :");
 	JLabel estadoCiviljl = new JLabel("ESTADO CIVIL :");
 	JLabel escolhaSexojl = new JLabel("SEXO :");
 	JLabel nomeJl = new JLabel("NOME :");
 	JLabel telefone1jl = new JLabel("TELEFONE :");
 	JLabel telefone2jl = new JLabel("CELULAR :");
 	JLabel cepjl = new JLabel("CEP :");
-	JLabel enderecojl = new JLabel("ENDERE«O :");
-	JLabel numerojl = new JLabel("N∫ :");
+	JLabel enderecojl = new JLabel("ENDERE√áO :");
+	JLabel numerojl = new JLabel("N¬∫:");
 	JLabel complementojl = new JLabel("COMPLEMENTO :");
 	JLabel bairrojl = new JLabel("BAIRRO :");
 	JLabel cidadejl = new JLabel("CIDADE :");
@@ -238,9 +238,10 @@ public class AlterarRegistroFuncionario extends JFrame implements ActionListener
 			funcionario.setId((Integer.parseInt(id.getText())));
 			
 			add.Alterar(funcionario);
-			br.com.clubeBeer.Telas.Menu.main(null);
+			
 			JOptionPane.showMessageDialog(null, "Cadastro atualizado com sucesso " );
-			Menu.main(null);
+			setVisible(false);
+			Menu.Montar();
 
 			
 			setVisible(false);
@@ -249,7 +250,8 @@ public class AlterarRegistroFuncionario extends JFrame implements ActionListener
 				FuncionarioDAO excluir = new FuncionarioDAO();
 				excluir.Excliur(nome.getText());
 				JOptionPane.showMessageDialog(null, "Cadastro excluido com sucesso " );
-				Menu.main(null);
+				setVisible(false);
+				Menu.Montar();
 			}
 			
 		}

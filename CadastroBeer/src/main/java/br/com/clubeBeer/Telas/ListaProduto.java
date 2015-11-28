@@ -50,7 +50,7 @@ import Venda.TabelaModeloProduto;
 
 	public class ListaProduto  {
 
-		private static JFrame janela;
+		public static JFrame janela;
 		private static JPanel painelPrincipal;
 		private static JTable tabela;
 

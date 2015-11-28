@@ -67,6 +67,7 @@ import PessoaFisica.TabelaModelo;
 			tabela.addMouseListener(new MouseAdapter() {  
 		            public void mouseClicked(MouseEvent e) {  
 		                if(e.getClickCount() == 2) {  
+		                	janela.setVisible(false);
 		                    int row = tabela.getSelectedRow();  
 		                    Funcionario pessoa = new Funcionario();
 		                    AlterarRegistroFuncionario teste = new AlterarRegistroFuncionario();
